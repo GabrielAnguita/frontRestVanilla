@@ -1,0 +1,111 @@
+<!-- /Users/luisherrera/Desktop/enclases/rest-consumer/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <!-- Data Tables -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-flash-1.6.2/b-html5-1.6.2/b-print-1.6.2/datatables.min.css" />
+    <!-- Data Tables #-->
+
+</head>
+
+<body onload="llenarTabla()">
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <h1>Usuarios</h1>
+                <!--Formulario-->
+                <form id="formulario">
+                    <input type="hidden" id="id" name="id" />
+                    <div class="form-group">
+                        <label for="username">Nombre</label>
+                        <input id="nombre" name="nombre" type="text" class="form-control" id="username" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Correo (username)</label>
+                        <input id="username" name="username" type="email" class="form-control" id="username" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input id="password" name="password" type="password" class="form-control" id="password">
+                    </div>
+                    <button id="btn-ingresar" onclick="ingresar()" type="button" class="btn btn-secondary">Ingresar</button>
+                </form>
+                <!--Formulario #-->
+                <div class="my-3"></div>
+                <!-- Data Table -->
+                <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>User Name</th>
+                            <th>Password</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>User Name</th>
+                            <th>Password</th>
+                            <th>Acción</th>
+                        </tr>
+                    </tfoot>
+                    <tbody >
+
+                    </tbody>
+                </table>
+                <!-- Data Table #-->
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+
+    <!-- Data Tables -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.datatables.net/v/bs4/jq-3.3.1/jszip-2.5.0/dt-1.10.21/b-1.6.2/b-colvis-1.6.2/b-flash-1.6.2/b-html5-1.6.2/b-print-1.6.2/datatables.min.js"></script>
+
+
+    <script type="text/javascript">
+        const cdn = "//cdn.datatables.net/plug-ins/1.10.21/i18n/Spanish.json"
+        $(document).ready(function () {
+            $('#dataTable').DataTable({
+                "language": {
+                    "url": cdn
+                }
+            });
+        });
+    </script>
+    <!-- Data Tables #-->
+    <script src="js/traer_todos.js" ></script>
+    <script src="js/ingresar.js" ></script>
+    <script src="js/actualizar.js" ></script>
+    <script src="js/eliminar.js" ></script>
+
+</body>
+
+</html>
