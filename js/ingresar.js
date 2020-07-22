@@ -1,4 +1,5 @@
 const ingresar = () => {
+    const url = "http://localhost:8080/api/v1/usuarios"
     const formulario = document.querySelector('#formulario')
     const nombre = formulario.nombre.value
     const username = formulario.username.value

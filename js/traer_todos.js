@@ -1,6 +1,5 @@
-const url = "http://localhost:8080/api/v1/usuarios"
-
 const llenarTabla = () => {
+    const url = "http://localhost:8080/api/v1/usuarios"
     const propiedades = {
         method: 'GET'
     }
@@ -30,6 +29,8 @@ const llenarTabla = () => {
             // agregamos la fila y la dibujamos
             table.row.add($(fila)[0]).draw();
         });
-
+        const btn_ingresar = document.querySelector('#btn-ingresar')
+        btn_ingresar.innerHTML = "Ingresar"
+        btn_ingresar.onclick = ingresar
     })
 }
